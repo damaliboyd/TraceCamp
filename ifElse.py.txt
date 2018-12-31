@@ -1,0 +1,14 @@
+#!/bin/python3
+
+N = int(input())
+
+isIs = "Weird"
+isNot = "Not Weird"
+if ((N % 2) == 1):
+    print(f'{isIs}')
+elif ((N>= 2) and (N <= 5)):
+    print(f'{isNot}')
+elif ((N>= 6) and (N <= 20)):
+    print(f'{isIs}')
+else: 
+    print(f'{isNot}')
