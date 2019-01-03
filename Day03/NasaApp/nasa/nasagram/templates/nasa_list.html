@@ -1,0 +1,7 @@
+{% for nasa_com in nasa_com %}
+<p>
+  <a href ="/nasa/comment/{{nasa_com.id}}" >{{ nasa_com.comment }}</a>
+</p>
+<p>Rating:{{nasa_com.rating}}     Favorite:{{nasa_com.favorite}}</p>
+<hr>
+{% endfor %}

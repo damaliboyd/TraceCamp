@@ -1,0 +1,7 @@
+
+<form method="POST">
+  {% csrf_token %}
+  <img src="{{ nasa_com.url }}">
+  <p> Comment: {{ nasa_com.comment }} </p>
+  <p> Rating:  {{ nasa_com.rating }}/5</p>
+</form>
