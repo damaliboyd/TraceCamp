@@ -1,0 +1,7 @@
+<form action="{% url 'create' %}" method="GET">
+  <label for="pick_date">Pick a Date:</label>
+{% csrf_token %}
+  <input type="date" id="start" name="pick_date">
+
+  <input type="submit" value="Submit">
+</form>
