@@ -20,8 +20,7 @@ from animalapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.AnimalHomeView.as_view(), name='home' ),
-    path('animal/create', views.AnimalCreateView.as_view(), name='animal_create' ),
-    path('animal/read/<int:pk>', views.AnimalReadView.as_view(), name='animal_read' ),
-    path('animal/update/<int:pk>', views.AnimalUpdateView.as_view(), name='animal_update' ),
+    path('animal/create', views.AnimalCreateView.as_view(), name='animal_create'),
+    path('animal/list/', views.AnimalListView.as_view(), name='animal_list' ),
     path('animal/delete/<int:pk>', views.AnimalDeleteView.as_view(), name='animal_delete' )
 ]

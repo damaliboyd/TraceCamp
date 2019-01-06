@@ -1,0 +1,9 @@
+<h2>List View</h2>
+    <ul>
+        {% for animals in object_list %}
+            {% for img in animals.image.all %}
+                    <img src="{{ img.url }}" alt="Picture of {{ animal.name }}">
+            {% endfor %}
+            <li>{{ animals.name }}</li>
+        {% endfor %}
+    </ul>

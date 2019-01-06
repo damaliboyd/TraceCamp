@@ -1,18 +1,20 @@
 from django.db import models
+from django.urls import reverse_lazy
+
 
 # Create your models here.
 
-class Image:
-    url = models.URLField()
-
-class Animal:
-    name = models.CharField()
-    age = models.IntegerField()
-    breed = models.CharField()
-    images = models.ForeignKey('Image', on_delete = models.CASCADE)
+class Animal(models.Model):
+    name = models.TextField()
+    age = models.TextField()
+    type_of = models.TextField()
     description = models.TextField()
     location = models.IntegerField()
-    
+    liked = models.BooleanField()
 
+    def get_absolute_url(self):
+        return reverse_lazy('animal_create')
 
-    
+class Image(models.Model):
+    url = models.URLField()
+    animal = models.ForeignKey(Animal, on_delete = models.CASCADE, related_name='image')
