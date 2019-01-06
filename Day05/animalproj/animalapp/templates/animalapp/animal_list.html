@@ -1,0 +1,28 @@
+{% extends 'header.html' %}
+{% block content %}
+
+<h2>The List of Animals For Your Viewing Pleasure</h2>
+    <ul>
+
+
+        <div class="row">
+            {% for animals in object_list %}
+                <div class="col s12 m6">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="images/sample-1.jpg">
+                      <span class="card-title">{{ animals.name }}</span>
+                    </div>
+                    <div class="card-content">
+                      <p>{{ animals.description }}</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="/animal/delete/{{animals.id}}">Remove From List</a>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+
+    </ul>
+{% endblock %}

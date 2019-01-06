@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+{% block content %}
+<h2>Humans! Find your animal!</h2>
+<p>You can specify the location and animal type.</p>
+
+
+  <form action="{% url 'animal_create' %}" method="GET">
+
+     <div class="input-field ">
+         <select name="animal_type">
+             <option value="barnyard">Barnyard</option>
+             <option value="bird">Bird</option>
+             <option value="cat" selected>Cat</option>
+             <option value="dog">Dog</option>
+             <option value="reptile">reptile</option>
+             <option value="smallfurry">Smallfurry</option>
+         </select>
+
+         <label>Select Your Animal Type</label>
+     </div>
+
+
+      <div class="input-field ">
+          <label>ZIP Code</label>
+          <input type="text" pattern="[0-9]{5}" name="zip_code" required/>
+      </div>
+
+
+  <input type="submit">
+</form>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+  });
+</script>
+{% endblock %}

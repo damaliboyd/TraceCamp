@@ -1,0 +1,9 @@
+{% extends 'header.html' %}
+{% block content %}
+{% for img in animal.image.all %}
+      <img src="{{ img.url }}" alt="Picture of {{ animal.name }}">
+    {% endfor %}
+    <p>{{ animal.name }}   -    {{ animal.age }}</p>
+    {{form.as_p}}
+    <input type="submit" value="Another Furbaby">
+{% endblock %}
